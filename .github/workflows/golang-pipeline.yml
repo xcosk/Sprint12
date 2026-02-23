@@ -15,6 +15,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Prepare Go module
+        run: |
+          if [ ! -f go.mod ]; then
+            go mod init parcel-tracker
+          fi
+          go mod tidy
+
       - name: Run Unit Tests
         run: GOOS=linux GOARCH=amd64 go test ./...
 
