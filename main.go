@@ -21,7 +21,6 @@ type Parcel struct {
 	Address   string
 	CreatedAt string
 }
-
 type ParcelService struct {
 	store ParcelStore
 }
